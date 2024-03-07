@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical"
+        android:background="@color/black"
+        tools:context=".exercise1">
+
+        <ImageView
+            android:id="@+id/imageAndroid"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:src="@drawable/androi"
+            android:layout_marginTop="20dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@android:color/white"
+            />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/new_game"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:backgroundTint="#C5BEBE"
+            android:lines="1"
+            android:padding="10px"
+            android:text="New Game"
+            android:textColor="@color/black">
+
+        </Button>
+
+        <Button
+            android:id="@+id/continue_game"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:backgroundTint="#C5BEBE"
+            android:lines="1"
+            android:padding="10px"
+            android:text="Continue Game"
+            android:textColor="@color/black">
+
+        </Button>
+
+        <Button
+            android:id="@+id/help_game"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:backgroundTint="#C5BEBE"
+            android:lines="1"
+            android:padding="10px"
+            android:text="Help Game"
+            android:textColor="@color/black">
+
+        </Button>
+
+        <Button
+            android:id="@+id/quick_game"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:backgroundTint="#C5BEBE"
+            android:lines="1"
+            android:padding="10px"
+            android:text="Quick Game"
+            android:textColor="@color/black">
+
+        </Button>
+
+
+    </LinearLayout>
+    <Button
+        android:id="@+id/exercise_2btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Exercise 2"
+        android:layout_gravity="center_horizontal">
+
+    </Button>
+
+
+</LinearLayout>
+
+
+
