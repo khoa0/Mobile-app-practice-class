@@ -7,8 +7,7 @@
         android:name="android.hardware.telephony"
         android:required="false" />
 
-    <uses-permission android:name="android.permission.CALL_PHONE" />
-    <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS" />
+    <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
         android:allowBackup="true"
@@ -21,19 +20,7 @@
         android:theme="@style/Theme.MyApp"
         tools:targetApi="31">
         <activity
-            android:name=".exercise5"
-            android:exported="true"/>
-        <activity
-            android:name=".exercise4"
-            android:exported="false" />
-        <activity
-            android:name=".exercise3"
-            android:exported="false" />
-        <activity
-            android:name=".exercise2"
-            android:exported="true" />
-        <activity
-            android:name=".exercise1"
+            android:name=".homework2"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

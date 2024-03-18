@@ -14,8 +14,10 @@ public class exercise5 extends AppCompatActivity {
     Button btn1, btn2, btn3, btn4, btn5, btn6, btn7,btn8, btn9, btn0,
             btnp, btnm, btnmul, btnd, btnR, btnRs;
 
-    int resultDis = 0;
-
+    int lastValue = 0;
+    int value;
+    String secondvalue;
+    boolean flag = false;
     String operation;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,36 +59,85 @@ public class exercise5 extends AppCompatActivity {
                     case R.id.btn7:
                     case R.id.btn8:
                     case R.id.btn9:
+                        if (flag)
+                        {
+                            resetvalue();
+                            flag = false;
+                        }
+
                         setvalue(result, bt.getText().toString());
                         break;
                     case R.id.btnp:
-                        setvalue(result, " + ");
-                        operation = "plus";
-                        //resultDis = Integer.parseInt(input.getText().toString());
+                        operation = " + ";
+                        value = Integer.parseInt(result.getText().toString());
+                        if (!flag)
+                            lastValue = lastValue + value;
+                        result.setText("");
+                        input.setText(Integer.toString(lastValue)  + operation);
+                        flag = false;
                         break;
                     case R.id.btnm:
-                        setvalue(result, " - ");
-                        operation = "sub";
-                        //resultDis = Integer.parseInt(input.getText().toString());
+                        operation = " - ";
+                        value = Integer.parseInt(result.getText().toString());
+                        if (!flag)
+                        {
+                            if (lastValue != 0)
+                                lastValue = lastValue - value;
+                            else
+                                lastValue = value;
+                        }
+                        result.setText("");
+                        input.setText(Integer.toString(lastValue)  + operation);
+                        flag = false;
                         break;
                     case R.id.btnmul:
-                        setvalue(result, " * ");
-                        operation = "mult";
-                        //resultDis = Integer.parseInt(input.getText().toString());
+                        operation = " * ";
+                        value = Integer.parseInt(result.getText().toString());
+                        if (!flag)
+                        {
+                            if (lastValue != 0)
+                                lastValue = lastValue * value;
+                            else
+                                lastValue = value;
+                        }
+                        result.setText("");
+                        input.setText(Integer.toString(lastValue)  + operation);
+                        flag = false;
                         break;
                     case R.id.btnd:
-                        setvalue(result, " / ");
-                        operation = "divi";
+                        operation = " / ";
+                        value = Integer.parseInt(result.getText().toString());
+                        if (!flag)
+                        {
+                            if (lastValue != 0)
+                                lastValue = lastValue / value;
+                            else
+                                lastValue = value;
+                        }
+                        result.setText("");
+                        input.setText(Integer.toString(lastValue)  + operation);
+                        flag = false;
                         break;
                     case R.id.btnR:
-                        operation = "result";
-                        //resultDis = Integer.parseInt(input.getText().toString());
-                        resetvalue();
+                        if (flag)
+                        {
+                            input.setText(Integer.toString(lastValue)  + operation + secondvalue);
+                            lastValue = process(lastValue, Integer.parseInt(
+                                                                    secondvalue ));
+                            result.setText(Integer.toString(lastValue));
+                        }
+                        else {
+                            secondvalue = result.getText().toString();
+                            setvalue(input, result.getText().toString());
+                            lastValue = process(lastValue, Integer.parseInt(
+                                                            result.getText().toString() ));
+                            result.setText(Integer.toString(lastValue));
+                        }
+                        flag = true;
                         break;
                     case R.id.btnRs:
-                        operation = "reset";
-                        resultDis = 0;
                         resetvalue();
+                        flag = false;
                         break;
 
                 }
@@ -110,15 +161,17 @@ public class exercise5 extends AppCompatActivity {
         btnR.setOnClickListener(buttonListener);
         btnRs.setOnClickListener(buttonListener);
     }
-    void setvalue(TextView result , String num){
-        String last = result.getText().toString();
-        if(!last.equals("0")){
-            last +=num;
-            num=last;
+
+    void setvalue(TextView result, String num) {
+        String currentValue = result.getText().toString();
+        if (currentValue.equals("0")) {
+            result.setText(num);
+        } else {
+            result.setText(currentValue + num);
         }
-        result.setText(num);
     }
     public void resetvalue() {
+        lastValue = 0;
         input.setText("");
         result.setText("0");
     }
@@ -127,26 +180,24 @@ public class exercise5 extends AppCompatActivity {
         Integer presult=0;
         switch (operation)
         {
-            case "plus": {
+            case " + ": {
                 presult = a + b;
-                input.setText(presult.toString());
                 break;
             }
-
-            case "sub" :{
+            case " - " :{
                 presult = a-b;
-                input.setText(presult.toString());
                 break;
             }
-
-            case "mult": {
+            case " * ": {
                 presult = a*b;
-                input.setText(presult.toString());
                 break;
             }
-            case "divi": {
-                presult =  a/b;
-                input.setText(presult.toString());
+            case " / ": {
+                if (b != 0) {
+                    presult = a / b;
+                } else {
+                    input.setText("Error: Division by zero");
+                }
                 break;
             }
         }
