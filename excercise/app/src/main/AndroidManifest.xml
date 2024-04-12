@@ -15,30 +15,13 @@
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"
-        android:label="Lab2 - exercise"
+        android:label="Lab3 - exercise"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApp"
         tools:targetApi="31">
         <activity
-            android:name=".exercise5"
-            android:exported="true"/>
-
-        <activity
-            android:name=".exercise4_contact_infor"
-            android:exported="false" />
-
-        <activity
-            android:name=".exercise4_main"
-            android:exported="false" />
-        <activity
-            android:name=".exercise3"
-            android:exported="false" />
-        <activity
-            android:name=".exercise2"
-            android:exported="false" />
-        <activity
-            android:name=".exercise1"
+            android:name=".exercise4_graphic"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
