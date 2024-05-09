@@ -1,59 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
     android:background="@color/black"
-    tools:context=".exercise2">
+    tools:context=".exercise1">
 
     <Button
-        android:id="@+id/callbtn"
-        android:layout_width="wrap_content"
+        android:id="@+id/read_data_btn"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="35dp"
-        android:text="Call"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/phonenum" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="24dp"
-        android:text="Nhap so dien thoai can goi"
-        android:textColor="@android:color/white"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
+        android:text="Read Data"
+        android:layout_margin="8dp"
+        />
     <EditText
-        android:id="@+id/phonenum"
-        android:layout_width="0dp"
+        android:id="@+id/text_file"
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        android:gravity="top"
+        android:padding="3dp"
+        android:background="@color/white"
+        android:layout_margin="8dp"
+        app:cardElevation="10dp"
+        />
+    <Button
+        android:id="@+id/write_data_btn"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:layout_marginStart="9dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="9dp"
-        android:background="@android:color/white"
-        android:backgroundTint="@android:color/white"
-        android:ems="10"
-        android:hint="Nhap so dien thoai"
-        android:inputType="text"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
-
+        android:text="Write Data"
+        android:layout_margin="8dp"
+        />
     <Button
         android:id="@+id/exercise_3btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="34dp"
         android:text="Exercise 3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/callbtn"/>
+        android:layout_gravity="center_horizontal">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </Button>
+
+
+</LinearLayout>
+
+
+
